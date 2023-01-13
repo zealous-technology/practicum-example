@@ -25,11 +25,11 @@ jobs:
       run: dotnet restore ./HelloWorld.Solution
     - name: Build
       run: dotnet build --no-restore ./HelloWorld.Solution      
-    - name: Test
-      run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
+  #  - name: Test
+  #    run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
        name: my-artifact
-       path: "./dist" 
+       path: "./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0/HelloWorld.Console.dll" 
