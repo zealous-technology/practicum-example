@@ -28,17 +28,8 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
       
-    - name: version
-      run: echo "::set-output name=version::$(./HelloWorld.Solution/HelloWorld.Console/bin/HelloWorld.Console.exe --version)"
-      id: version
-    - name: release
-      uses: actions/create-release@v1
-      id: create_release
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
       with:
-        draft: false
-        prerelease: false
-        release_name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ github.ref }}
-        body_path: CHANGELOG.md
-    env:
-      GITHUB_TOKEN: ${{ github.token }}
+       name: my-artifact
+       path: "./dist" 
