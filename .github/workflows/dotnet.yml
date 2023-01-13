@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  foo: steve
+  DAY_OF_WEEK: Monday
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
  #     run : env
     
     - name: Print Foo
-      run: echo "hello $foo did it show the name?"
+      run: echo "Greeting First_Name. Today is $DAY_OF_WEEK!"
       env:
         foo: Bob
         
