@@ -23,6 +23,8 @@ jobs:
 
     - name: Print Directory
       run: dir
+    - name: Print env
+      run : env
     
     - name: Print Foo
       run: echo "hello $foo"
