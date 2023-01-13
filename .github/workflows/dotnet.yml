@@ -29,10 +29,10 @@ jobs:
     - name: Print Foo
       run: echo "Greeting First_Name. Today is $DAY_OF_WEEK!"
       env:
-        foo: Bob
+        DAY_OF_WEEK: Bob
         
     - name: Print Foo again
-      run : echo "222 $foo"
+      run : echo "222 $DAY_OF_WEEK"
     
     
     
