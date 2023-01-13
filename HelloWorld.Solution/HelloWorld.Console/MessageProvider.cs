@@ -1,12 +1,12 @@
 ﻿namespace HelloWorld.Console
 {
-    internal interface IMessageProvider
+    public interface IMessageProvider
     {
         string GetMessage();
     }
 
 
-    internal class MessageProvider : IMessageProvider
+    public class MessageProvider : IMessageProvider
     {
         public string GetMessage() => "Hello world!";
     }
