@@ -22,5 +22,11 @@ namespace HelloWorld.Console.Test
         {
             Assert.AreEqual("Hello world!", _sut.GetMessage());
         }
+
+        [TestMethod]
+        public void TestMessageIsPersonalized()
+        {
+            Assert.AreEqual("Hello Steve!", _sut.GetMessage("Steve"));
+        }
     }
 }
