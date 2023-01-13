@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  foo: steve was here
+
 jobs:
   build:
 
@@ -16,10 +19,22 @@ jobs:
     runs-on: windows-latest
 
     steps:
-#    - uses: actions/checkout@v3
-    - run: env.test = 'foo'
-    - run: dir
-    - run: print(env.test)
+#    - uses: actions/checkout@v3\
+
+    - name: Print Directory
+      run: dir
+    
+    - name: Print Foo
+      run: echo "hello $foo"
+      env:
+        foo: Bob
+        
+    - name: Print Foo again
+      run : echo "222 $foo"
+    
+    
+    
+    
 #    - name: Setup .NET
 #      uses: actions/setup-dotnet@v3
  #     with:
