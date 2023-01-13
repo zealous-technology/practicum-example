@@ -1,4 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HelloWorld.Console;
 
-Console.WriteLine("Hello, World, again! bbbbb");
+var messageProvider = new MessageProvider();
+
+var message = messageProvider.GetMessage();
+
+Console.WriteLine(message);
+
