@@ -24,24 +24,21 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./HelloWorld.Solution
     - name: Build
-      run: dotnet build --no-restore ./HelloWorld.Solution
+      run: dotnet build --no-restore ./HelloWorld.Solution      
     - name: Test
       run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
       
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v3
+    - name: version
+      run: echo "::set-output name=version::$(./bin/azblogfilter --version)"
+      id: version
+    - name: release
+      uses: actions/create-release@v1
+      id: create_release
       with:
-          name: dist-without-markdown
-          path: |
-            dist
-            !dist/**/*.md
-            
-    - name: upload windows artifact
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./bin/azblogfilter.windows-amd64.zip
-        asset_name: azblogfilter.windows-amd64.zip
-        asset_content_type: application/zip
+        draft: false
+        prerelease: false
+        release_name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ github.ref }}
+        body_path: CHANGELOG.md
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
