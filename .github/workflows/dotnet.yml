@@ -27,3 +27,11 @@ jobs:
       run: dotnet build --no-restore ./HelloWorld.Solution
     - name: Test
       run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
+      
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+          name: dist-without-markdown
+          path: |
+            dist
+            !dist/**/*.md
