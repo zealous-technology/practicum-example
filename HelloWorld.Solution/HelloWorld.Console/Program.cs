@@ -6,3 +6,5 @@ var message = messageProvider.GetMessage();
 
 Console.WriteLine(message);
 
+Console.WriteLine(messageProvider.GetMessage("Steve"));
+
