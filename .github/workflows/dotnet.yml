@@ -23,11 +23,11 @@ jobs:
 
     - name: Print Directory
       run: dir
-    - name: Print env
-      run : env
+ #   - name: Print env
+ #     run : env
     
     - name: Print Foo
-      run: echo "hello $foo"
+      run: echo "hello $foo did it show the name?"
       env:
         foo: Bob
         
