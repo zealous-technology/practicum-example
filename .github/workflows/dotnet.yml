@@ -19,6 +19,7 @@ jobs:
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Captain Kirk
+      pin: qwerty
 
 
   build_test_upload:
