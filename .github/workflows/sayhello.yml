@@ -8,9 +8,6 @@ on:
       employee-name:
         required: true
         type: string
-      pin:
-        required: true
-        type: string
 
 jobs:
   reusable_job:
@@ -22,4 +19,4 @@ jobs:
       run: echo ${{ inputs.employee-name }}
       
     - name: Echo PIN
-      run: echo ${{ inputs.pin }}
+      run: echo ${{ secrets.pin }}
