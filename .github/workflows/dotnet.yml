@@ -13,14 +13,14 @@ env:
   DAY_OF_WEEK: Monday
   SOLUTION: ./HelloWorld.Solution
   ARTIFACT: ./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0
-  FOO: ${{ secrets.pin }}
+  FOO: blah
 
 jobs:
   call_workflow:
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Captain Kirk
-      pin: ${{ env.FOO }}
+      pin: $FOO
 
 
   build_test_upload:
