@@ -16,4 +16,4 @@ jobs:
     
     steps:
     - name: Echo Hello Message
-      run: echo The usename is ${{ inputs.user-name }}
+      run: echo ${{ inputs.user-name }}
