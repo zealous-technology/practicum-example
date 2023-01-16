@@ -13,14 +13,14 @@ env:
   DAY_OF_WEEK: Monday
   SOLUTION: ./HelloWorld.Solution
   ARTIFACT: ./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0
-  FOO: blah
 
 jobs:
   call_workflow:
+
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Captain Kirk
-      pin: ${{env.FOO}}
+      pin: ass
 
 
   build_test_upload:
@@ -33,6 +33,9 @@ jobs:
 
     - name: Print Directory
       run: dir
+      
+    - name: Print secret
+      run: echo ${{secrets.pin}}
  
     - name: Print Foo
       run: echo "Greeting First_Name. Today is $DAY_OF_WEEK!"
