@@ -16,7 +16,7 @@ env:
 
 jobs:
   call_workflow:
-    uses: zealous-technology/practicum-example/.github/workflows/sayhello.yaml@main
+    uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Mr Spock
 
