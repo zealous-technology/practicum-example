@@ -23,3 +23,11 @@ jobs:
       
     - name: Echo PIN
       run: echo ${{ secrets.pin }}
+      
+    - name: if pin equals 9999
+      if: secrets.pin == 9999
+      run: echo "The pin is 9999"
+      
+    - name: pin is not 9999
+      if: secrets.pin != 9999
+      run: echo "pin is NOT 9999"
