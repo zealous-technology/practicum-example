@@ -1,0 +1,19 @@
+# This workflow is called from another workflow
+
+name: SayHello
+
+on:
+  workflow_call:
+    inputs:
+      employee-name:
+        required: true
+        type: string
+
+jobs:
+  reusable_job:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Echo Hello Message
+      run: echo "HELLLLLLOOOOO"
