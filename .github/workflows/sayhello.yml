@@ -8,6 +8,9 @@ on:
       employee-name:
         required: true
         type: string
+    secrets:
+      pin:
+        required: true
 
 jobs:
   reusable_job:
