@@ -16,4 +16,4 @@ jobs:
     
     steps:
     - name: Echo Hello Message
-      run: echo "HELLLLLLOOOOO"
+      run: echo "HELLLLLLOOOOO $input.employee_name"
