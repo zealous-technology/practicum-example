@@ -20,7 +20,7 @@ jobs:
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Captain Kirk
-      pin: ${{ FOO }}
+      pin: ${{env.FOO}}
 
 
   build_test_upload:
