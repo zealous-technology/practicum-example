@@ -11,6 +11,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  SOLUTION: ./HelloWorld.Solution
 
 jobs:
   build:
@@ -35,7 +36,7 @@ jobs:
         dotnet-version: 6.0.x
         
     - name: Restore dependencies
-      run: dotnet restore ./HelloWorld.Solution
+      run: dotnet restore $SOLUTION
     
     - name: Build
       run: dotnet build --no-restore ./HelloWorld.Solution
