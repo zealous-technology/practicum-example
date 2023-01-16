@@ -42,8 +42,8 @@ jobs:
     - name: Build
       run: dotnet build $SOLUTION --no-restore
       
-  #  - name: Test
-  #    run: dotnet test $SOLUTION --no-build --verbosity normal
+    - name: Test
+      run: dotnet test $SOLUTION --no-build --verbosity normal
       
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
