@@ -16,4 +16,4 @@ jobs:
     
     steps:
     - name: Echo Hello Message
-      run: echo "HELLLLLLOOOOO ${{ inputs.employee_name }} <- was the name here?"
+      run: echo ${{ inputs.employee_name }}
