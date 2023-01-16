@@ -5,7 +5,7 @@ name: SayHello
 on:
   workflow_call:
     inputs:
-      username:
+      user-name:
         required: true
         type: string
 
@@ -16,4 +16,4 @@ jobs:
     
     steps:
     - name: Echo Hello Message
-      run: echo The usename is ${{ inputs.username }}
+      run: echo The usename is ${{ inputs.user-name }}
