@@ -29,4 +29,4 @@ jobs:
       env:
         MY_PIN: ${{ secrets.pin }}
       if: env.MY_PIN == 9999
-      run: echo "The pin is 9999"
+      run: echo "The pin is what u thought which is 9 9 9   9"
