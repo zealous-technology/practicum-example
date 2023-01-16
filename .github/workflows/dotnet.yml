@@ -15,41 +15,36 @@ env:
 jobs:
   build:
 
-    #runs-on: ubuntu-latest
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    #runs-on: windows-latest
 
     steps:
-#    - uses: actions/checkout@v3\
+    - uses: actions/checkout@v3\
 
     - name: Print Directory
       run: dir
- #   - name: Print env
- #     run : env
-    
+ 
     - name: Print Foo
       run: echo "Greeting First_Name. Today is $DAY_OF_WEEK!"
       env:
         DAY_OF_WEEK: Bob
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
         
-    - name: Print Foo again
-      run : echo "222 $DAY_OF_WEEK"
+    - name: Restore dependencies
+      run: dotnet restore ./HelloWorld.Solution
     
-    
-    
-    
-#    - name: Setup .NET
-#      uses: actions/setup-dotnet@v3
- #     with:
-  #      dotnet-version: 6.0.x
-  #  - name: Restore dependencies
-  #    run: dotnet restore ./HelloWorld.Solution
- #   - name: Build
- #     run: dotnet build --no-restore ./HelloWorld.Solution      
-  #  - name: Test
-  #    run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
+    - name: Build
+      run: dotnet build --no-restore ./HelloWorld.Solution
       
-   # - name: Upload Artifacts
-  #    uses: actions/upload-artifact@v2
-  #    with:
-  #     name: my-artifact
-  #     path: "./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0" 
+    - name: Test
+      run: dotnet test --no-build --verbosity normal ./HelloWorld.Solution
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+       name: my-artifact
+       path: "./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0" 
