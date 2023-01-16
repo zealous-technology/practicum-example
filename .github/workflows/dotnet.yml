@@ -32,7 +32,7 @@ jobs:
         DAY_OF_WEEK: Bob
         
     - name: Display the day of week with powershell
-      run: echo "good morning, it's " + ${env:DAY_OF_WEEK}
+      run: echo "good morning, it's ${env:DAY_OF_WEEK}"
       shell: pwsh
 
     - name: Setup .NET
