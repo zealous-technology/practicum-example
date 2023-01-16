@@ -34,6 +34,11 @@ jobs:
     - name: Display the day of week with powershell
       run: echo "good morning, it's ${env:DAY_OF_WEEK}"
       shell: pwsh
+      
+    - name: Call Reusable workflow
+      uses: zealous-technology/practicum-example/.github/workflows/sayhello.yaml@main
+      with:
+        employee-name: Mr Spock
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
