@@ -16,4 +16,4 @@ jobs:
     
     steps:
     - name: Echo Hello Message
-      run: echo "HELLLLLLOOOOO ${{inputs.employee_name}}"
+      run: echo "HELLLLLLOOOOO ${{github.event.inputs.employee_name}}"
