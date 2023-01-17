@@ -9,7 +9,7 @@ on:
         required: true
         type: string
     secrets:
-      pin:
+      access-token:
         required: true
       
 
@@ -27,6 +27,6 @@ jobs:
       
     - name: if pin equals 9999
       env:
-        MY_PIN: ${{ secrets.pin }}
+        MY_PIN: ${{ secrets.access-token }}
       if: env.MY_PIN == 9999
       run: echo "The pin is what u thought which is 9 9 9   9"
