@@ -16,8 +16,7 @@ env:
   ARTIFACT: ./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0
 
 jobs:
-  call_SayHello_workflow:
-
+  sayhello_job:
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
       employee-name: Kirk
@@ -25,7 +24,7 @@ jobs:
       pin: ${{ secrets.pin }}
 
 
-  build_test_upload:
+  build_test_upload_job:
 
     runs-on: ubuntu-latest
     #runs-on: windows-latest
