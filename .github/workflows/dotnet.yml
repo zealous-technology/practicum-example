@@ -16,8 +16,8 @@ env:
   ARTIFACT: ./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0
 
 jobs:
-  sayhello:
-    uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
+  display_parameters:
+    uses: zealous-technology/practicum-example/.github/workflows/display_parameters.yml@main
     with:
       employee-name: Kirk
     secrets:
