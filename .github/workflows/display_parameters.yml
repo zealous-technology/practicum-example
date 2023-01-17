@@ -1,6 +1,6 @@
 # This workflow is called from another workflow
 
-name: SayHello Workflow
+name: display parameters workflow
 
 on:
   workflow_call:
@@ -14,19 +14,22 @@ on:
       
 
 jobs:
-  reusable_job:
-
+  say-hello:
     runs-on: ubuntu-latest
     
     steps:
     - name: Echo Hello Message
-      run: echo ${{ inputs.employee-name }}
-      
-  #  - name: Echo PIN
-  #    run: echo ${{ secrets.pin }}
+      run: echo Hello ${{ inputs.employee-name }}
       
     - name: if pin equals 9999
       env:
         MY_PIN: ${{ secrets.pin }}
       if: env.MY_PIN == 9999
       run: echo "The pin is what u thought which is 9 9 9   9"
+      
+  say-goodybye:
+    runs-on: ubunto-latest
+    
+    steps:
+      - name: Echo Goodbye Message
+        run: echo Goodbye ${{ inputs.employee-name }}
