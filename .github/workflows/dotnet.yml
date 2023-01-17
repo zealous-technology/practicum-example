@@ -19,9 +19,9 @@ jobs:
 
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
-      employee-name: Spock
+      employee-name: Kirk
     secrets:
-      access_token: ${{ secrets.pin }}
+      pin: ${{ secrets.pin }}
 
 
   build_test_upload:
