@@ -16,7 +16,7 @@ env:
   ARTIFACT: ./HelloWorld.Solution/HelloWorld.Console/bin/Debug/net6.0
 
 jobs:
-  call_workflow:
+  call_SayHello_workflow:
 
     uses: zealous-technology/practicum-example/.github/workflows/sayhello.yml@main
     with:
