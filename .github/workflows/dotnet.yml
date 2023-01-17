@@ -21,7 +21,7 @@ jobs:
     with:
       employee-name: Captain Kirk
     secrets:
-      pin: ${{ secrets.pin }}
+      access_token: ${{ secrets.pin }}
 
 
   build_test_upload:
