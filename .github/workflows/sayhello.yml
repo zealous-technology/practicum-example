@@ -22,8 +22,8 @@ jobs:
     - name: Echo Hello Message
       run: echo ${{ inputs.employee-name }}
       
-    - name: Echo PIN
-      run: echo ${{ secrets.pin }}
+  #  - name: Echo PIN
+  #    run: echo ${{ secrets.pin }}
       
     - name: if pin equals 9999
       env:
