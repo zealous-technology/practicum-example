@@ -1,6 +1,6 @@
 # This workflow is called from another workflow
 
-name: SayHello
+name: SayHello Workflow
 
 on:
   workflow_call:
