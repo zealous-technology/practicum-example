@@ -28,7 +28,7 @@ jobs:
       run: echo "The pin is what u thought which is 9 9 9   9"
       
   say-goodybye:
-    runs-on: ubunto-latest
+    runs-on: windows-latest
     
     steps:
       - name: Echo Goodbye Message
