@@ -9,7 +9,7 @@ on:
         required: true
         type: string
     secrets:
-      access-token:
+      access_token:
         required: true
       
 
