@@ -11,6 +11,10 @@ on:
     secrets:
       pin:
         required: true
+    outputs:
+      status:
+        description: some status code
+        value: i'm feeling great
       
 
 jobs:
