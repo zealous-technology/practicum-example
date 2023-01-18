@@ -36,8 +36,7 @@ jobs:
         run: echo "weather=sunny" >> $GITHUB_ENV
         
       - name: Display env variable
-        run: |
-          echo "${{ env.weather }}"
+        run: echo "the weather today is ${{ env.weather }}"
       
       - name: Echo Goodbye Message
         run: echo "Goodbye ${{ inputs.employee-name }}"
