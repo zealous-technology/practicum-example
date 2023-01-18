@@ -31,3 +31,6 @@ jobs:
       - name: display not enabled
         if: ${{ !inputs.enabled }}
         run: echo "it is NOT enabled"
+        
+      - name: display founder
+        run: echo "${{ vars.FOUNDER }}"
