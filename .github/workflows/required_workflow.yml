@@ -1,7 +1,10 @@
--name: the organization required workflow
+name: the organization required workflow
 
-on: pull-request
+on: pull_request_target
 
 jobs:
-  -name: greeting
-   run: echo "hello organization from the required workflow"
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo greeting
+        run: echo "hello organization from the required workflow"
