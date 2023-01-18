@@ -25,9 +25,9 @@ jobs:
         run: echo "age is {{ inputs.age }}"
         
       - name: display enabled
-        if: inputs.enabled
+        if: ${{ inputs.enabled }}
         run: echo "it is enabled"
         
       - name: display not enabled
-        if: inputs.enabled == False
+        if: ${{ !inputs.enabled }}
         run: echo "it is NOT enabled"
