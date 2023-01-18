@@ -30,10 +30,7 @@ jobs:
     needs: display_parameters
 
     steps:
-    
-    - name: Display env variable (again)
-      run: echo "i already told ya, the weather today is ${{ env.weather }}"
-    
+   
     - name: Checkout code
       uses: actions/checkout@v3   
  
