@@ -3,10 +3,10 @@ name: dispatch_with_inputs
 on: 
   workflow_dispatch:
     inputs:
-      usernames:
+      username:
         required: true
         type: string
-      departments:
+      department:
         required: true
         type: string
       
@@ -17,8 +17,5 @@ jobs:
       - name: echo username
         run: echo ${{ inputs.username }}
         
-  display_department:
-    runs-on: ubuntu-latest
-    steps:
       - name: echo department
         run: echo ${{ inputs.department }}
