@@ -34,7 +34,7 @@ jobs:
     - name: Display env variable (again)
       run: echo "i already told ya, the weather today is ${{ env.weather }}"
     
-    - name: Checout code
+    - name: Checkout code
       uses: actions/checkout@v3   
  
     - name: Print Foo
