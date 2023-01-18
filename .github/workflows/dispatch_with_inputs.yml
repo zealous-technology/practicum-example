@@ -1,13 +1,14 @@
 name: dispatch_with_inputs
 
-on: workflow_dispatch
-  inputs:
-    usernames:
-      required: true
-      type: string
-     departments:
-      required: true
-      type: string
+on: 
+  workflow_dispatch:
+    inputs:
+      usernames:
+        required: true
+        type: string
+      departments:
+        required: true
+        type: string
       
 jobs:
   display_username:
