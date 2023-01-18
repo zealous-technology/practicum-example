@@ -28,7 +28,7 @@ jobs:
       run: echo "The pin is what u thought which is 9 9 9   9"
       
   say-goodybye:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     steps:
     
