@@ -34,3 +34,6 @@ jobs:
         
       - name: display founder
         run: echo "${{ vars.FOUNDER }}"
+      
+      - name: display job title
+        run: echo "${{ vars.JOBTITLE }}"
