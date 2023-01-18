@@ -22,6 +22,12 @@ jobs:
       employee-name: Kirk
     secrets:
       pin: ${{ secrets.pin }}
+      
+  display_output:
+    runs-on: ubuntu-latest
+    needs: display_parameters
+    steps:
+      - run: echo "the returned status was ${{ needs.display_parameters.outputs.status }}"
 
 
   build_test_upload:
