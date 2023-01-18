@@ -3,16 +3,16 @@ name: dispatch_with_3_inputs
 on:
   workflow_dispatch:
   
-  inputs:
-    name:
-      required: true
-      type: string
-    age:
-      required: true
-      type: integer
-    enabled:
-      required: true
-      type: boolean
+    inputs:
+      name:
+        required: true
+        type: string
+      age:
+        required: true
+        type: integer
+      enabled:
+        required: true
+        type: boolean
       
 jobs:
   display_inputs:
