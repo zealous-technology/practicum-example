@@ -1,0 +1,33 @@
+name: dispatch_with_3_inputs
+
+on:
+  workflow_dispatch:
+  
+  inputs:
+    name:
+      required: true
+      type: string
+     age:
+      required: true
+      type: integer
+     enabled:
+      required: true
+      type: boolean
+      
+jobs:
+  display_inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display name
+        run: echo "name is {{ inputs.name }}"
+        
+      - name: display age
+        run: echo "age is {{ inputs.age }}"
+        
+      - name: display enabled
+        if: inputs.enabled
+        run: echo "it is enabled"
+        
+      - name: display not enabled
+        if: !inputs.enabled
+        run: echo "it is NOT enabled"
