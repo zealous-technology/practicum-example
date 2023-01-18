@@ -7,10 +7,10 @@ on:
     name:
       required: true
       type: string
-     age:
+    age:
       required: true
       type: integer
-     enabled:
+    enabled:
       required: true
       type: boolean
       
