@@ -9,7 +9,7 @@ on:
         type: string
       age:
         required: true
-        type: integer
+        type: string
       enabled:
         required: true
         type: boolean
@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display name
-        run: echo "name is {{ inputs.name }}"
+        run: echo "name is ${{ inputs.name }}"
         
       - name: display age
-        run: echo "age is {{ inputs.age }}"
+        run: echo "age is ${{ inputs.age }}"
         
       - name: display enabled
         if: ${{ inputs.enabled }}
