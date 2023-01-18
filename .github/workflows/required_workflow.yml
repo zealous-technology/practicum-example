@@ -1,0 +1,7 @@
+-name: the organization required workflow
+
+on: pull-request
+
+jobs:
+  -name: greeting
+   run: echo "hello organization from the required workflow"
