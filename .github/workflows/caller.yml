@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: "GetName"
         id: foo
-        uses: ./.github/actions/action@v1
+        uses: ./.github/actions/action
       
       - name: "DisplayName"
         run: echo "The value is ${{ steps.foo.outputs.name }}"
