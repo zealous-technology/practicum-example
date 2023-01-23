@@ -5,11 +5,11 @@ outputs:
     description: "A name"
     value: steve
     #value: ${{ steps.provide-name.outputs.random-name }}
-    
- runs:
+
+runs:
   using: "composite"
   steps:
     - run: echo "hello there"
     
-    - id: provide-name
-      run: echo "random-name=batman" >> $GITHUB_OUTPUT
+    #- id: provide-name
+    #  run: echo "random-name=batman" >> $GITHUB_OUTPUT
