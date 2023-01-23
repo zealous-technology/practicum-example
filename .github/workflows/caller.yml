@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   CallProvider:
-    runs-on: unbunto-latest
+    runs-on: unbuntu-latest
   
     steps:
       - name: "GetName"
