@@ -1,15 +1,14 @@
-name: "Say Hello"
+name: 'Hello World'
+description: 'Greet someone'
 
 outputs:
   name:
-    description: "A name"
-    value: steve
-    #value: ${{ steps.provide-name.outputs.random-name }}
-
+    description: "Random number"
+    value: ${{ steps.provide-name.outputs.random-name }}
 runs:
   using: "composite"
   steps:
-    - run: echo "hello there"
-    
-    #- id: provide-name
-    #  run: echo "random-name=batman" >> $GITHUB_OUTPUT
+
+    - id: provide-name
+      run: echo "random-name=batman" >> $GITHUB_OUTPUT
+      shell: bash
