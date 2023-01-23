@@ -1,0 +1,14 @@
+name: Caller
+
+on: workflow-dispatch
+
+jobs:
+  CallProvider:
+  runs-on: unbunto-latest
+  
+  steps:
+    - name: "GetName"
+      run: ./github/workflow/NameProvider.yml
+      
+    - name: "DisplayName"
+      run: echo "The value is ${{ jobs.steps.GetValue.Name }}"
