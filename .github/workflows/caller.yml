@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: "GetName"
         id: foo
-        uses: actions/greet.yml@v1
+        uses: actions/practicum-example@v1
       
       - name: "DisplayName"
         run: echo "The value is ${{ steps.foo.outputs.name }}"
