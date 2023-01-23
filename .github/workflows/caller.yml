@@ -12,7 +12,7 @@ jobs:
     
       - name: "GetName"
         id: foo
-        uses: actions/hello-world-composite-repository@v1.0.0.0
+        uses: ./.github/actions/my-action
       
       - name: "DisplayName"
         run: echo "The value is ${{ steps.foo.outputs.name }}"
