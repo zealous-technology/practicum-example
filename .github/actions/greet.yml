@@ -1,0 +1,13 @@
+name: "Say Hello"
+
+outputs:
+  name:
+    description: "A name"
+    value: ${{ steps.provide-name.outputs.random-name }}
+    
+ runs:
+  using: "composite"
+  steps:
+    - run: "Echo hello"
+    
+    - run: echo "random-name=batman" >> $GITHUB_OUTPUT
