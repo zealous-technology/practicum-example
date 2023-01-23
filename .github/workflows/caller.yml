@@ -12,7 +12,7 @@ jobs:
     
       - name: "GetName"
         id: foo
-        uses: ./.github/actions/my-action
+        uses: ./.github/actions
       
       - name: "DisplayName"
         run: echo "The value is ${{ steps.foo.outputs.name }}"
