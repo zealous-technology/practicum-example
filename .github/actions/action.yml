@@ -8,6 +8,7 @@ outputs:
  runs:
   using: "composite"
   steps:
-    - run: "Echo hello"
+    - run: echo "hello there"
     
-    - run: echo "random-name=batman" >> $GITHUB_OUTPUT
+    - id: provide-name
+      run: echo "random-name=batman" >> $GITHUB_OUTPUT
