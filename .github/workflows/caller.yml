@@ -1,14 +1,15 @@
 name: Caller
 
-on: workflow-dispatch
+on: workflow_call
 
 jobs:
   CallProvider:
-  runs-on: unbunto-latest
+    runs-on: unbunto-latest
   
-  steps:
-    - name: "GetName"
-      run: ./github/workflow/NameProvider.yml
+    steps:
+      - name: "GetName"
+        id: foo
+        uses: actions/greet.yml@v1
       
-    - name: "DisplayName"
-      run: echo "The value is ${{ jobs.steps.GetValue.Name }}"
+      - name: "DisplayName"
+        run: echo "The value is ${{ steps.foo.outputs.name }}"
