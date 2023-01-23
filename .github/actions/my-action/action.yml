@@ -3,7 +3,8 @@ name: "Say Hello"
 outputs:
   name:
     description: "A name"
-    value: ${{ steps.provide-name.outputs.random-name }}
+    value: steve
+    #value: ${{ steps.provide-name.outputs.random-name }}
     
  runs:
   using: "composite"
