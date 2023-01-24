@@ -11,5 +11,5 @@ jobs:
       - id: get-name
         uses: zealous-technology/my-action@v2
         
-      - run: echo hello ${{ steps.get-name.output.name }}
+      - run: echo hello ${{ steps.get-name.outputs.name }}
         shell: bash
