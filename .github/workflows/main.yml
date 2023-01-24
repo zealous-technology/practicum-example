@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v3
+    
       - id: get-name
         uses: zealous-technology/my-action@v2
         
