@@ -1,0 +1,12 @@
+on: workflow_dispatch
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: actions/hello-world-composite-action@v1
+      - run: echo random-namer ${{ steps.foo.outputs.name }}
+        shell: bash
