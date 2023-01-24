@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: zealous-technology/hello-world-composite-action@v3
+        uses: zealous-technology/hello-world-composite-action@v4
       - run: echo random-namer ${{ steps.foo.outputs.name }}
         shell: bash
