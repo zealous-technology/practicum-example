@@ -3,7 +3,7 @@ on:
   
 jobs:
   job1:
-    uses: zealous-technology/practicum-example/.github/workflows/reusable_2_jobs.yml@main
+    uses: zealous-technology/practicum-example/.github/workflows/reusable_2_jobs.yml@maindd
   
   job2:
     runs-on: ubuntu-latest
