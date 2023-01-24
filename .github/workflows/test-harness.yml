@@ -1,0 +1,13 @@
+on:
+  workflow_call
+  
+jobs:
+  call-resuable-workflow-job:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - id: calling-step
+        uses: zealous-technology/practicum-example/.github/workflows/reusable_2-jobs.yml@main
+        
+      - id: display-step
+        run: echo the outputs are: ${{ steps.calling-step.outputs.first }} and ${{ steps.calling-step.outputs.second }} and ${{ steps.calling-step.outputs.third }}
