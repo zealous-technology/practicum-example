@@ -7,7 +7,7 @@ jobs:
     
     steps:
       - id: get-name
-        uses: zealous-technology/my-action@v1
+        uses: zealous-technology/my-action@v2
         
       - run: echo "hello ${{ steps.get-name.output.name }}"
         shell: bash
