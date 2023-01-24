@@ -2,8 +2,8 @@ on:
   workflow_dispatch
   
 jobs:
-  job1:
-    uses: zealous-technology/practicum-example/.github/workflows/reusable_2_jobs.yml@maindd
+  job1
+    uses: zealous-technology/practicum-example/.github/workflows/reusable_2_jobs.yml@main
   
   job2:
     runs-on: ubuntu-latest
