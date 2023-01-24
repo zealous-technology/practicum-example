@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v3
       - id: foo
         uses: ./.github/actions/my-action
-      - run: echo random-name ${{ steps.foo.outputs.random-name }}
+      - run: echo name ${{ steps.foo.outputs.name }}
         shell: bash
