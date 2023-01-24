@@ -3,16 +3,14 @@ name: Caller
 on: workflow_dispatch
 
 jobs:
-  CallProvider:
+  hello_world_job:
     runs-on: ubuntu-latest
-  
+    name: A job to say hello
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-    
-      - name: "GetName"
-        id: foo
+      - uses: actions/checkout@v3
+      - id: foo
         uses: ./.github/actions/my-action
-      
-      - name: "DisplayName"
-        run: echo "The value is ${{ steps.foo.outputs.name }}"
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
