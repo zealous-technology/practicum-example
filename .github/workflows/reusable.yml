@@ -1,1 +1,34 @@
-ff
+name: reusable workflow
+
+on:
+  workflow_call:
+  
+    outputs:
+      name:
+        value: ${{ jobs.job1.outputs.fullname }}
+      address:
+        value: ${{ jobs.job1.outputs.street }}
+      phone:
+        value: ${{ jobs.job2.outputs.telephone }}
+        
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      fullname: ${{ steps.step1.outputs.name }}
+      street: ${{ steps.step2.outputs.address }}
+    
+    steps:
+      - id: step1
+        run: echo "name=steve" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "address=simcoe" >> $GITHUB_OUTPUT
+      
+  job2:
+    runs-on: ubuntu-latest
+    outputs:
+      telephone: ${{ steps.step3.outputs.phone }}
+    steps:
+      - id: step3
+        run: echo "phone=123456" >> $GITHUB_OUTPUT
+      
