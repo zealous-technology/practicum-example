@@ -1,8 +1,7 @@
 name: resuable_with_two_jobs
 
 on:
-  workflow_call
-    
+  workflow_call:
     outputs:
       first:
         value: ${{ jobs.job-a.outputs.output-a }}
@@ -13,8 +12,7 @@ on:
 
 jobs:
   job-a:
-    runs-on:
-      ubuntu-latest
+    runs-on: ubuntu-latest
     outputs:
       output-a: ${{ steps.step1.outputs.role }}
       output-b: ${{ steps.step2.outputs.foo }}
@@ -23,12 +21,11 @@ jobs:
         run: echo "role=admin" >> $GITHUB_OUTPUT
       - id: step2
         run: echo "foo=bar" >> $GITHUB_OUTPUT
-   job-b:
+  job-b:
     runs-on:
       ubuntu-latest
     outputs:
       output-c: ${{ steps.step1.outputs.path }}
     steps:
-      - id: step1:
+      - id: step1
         run: echo "path=failure" >> $GITHUB_OUTPUT
-      
