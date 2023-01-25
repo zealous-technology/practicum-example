@@ -1,1 +1,14 @@
-ssss
+name: test harness
+
+on:
+  workflow_dispatch
+  
+jobs:
+  job1:
+    uses: zealous-technology/practicum-example/.github/workflows/reusable.yml@main
+    
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - run: echo "the vals are ${{ needs.job1.outputs.name }} ${{ needs.job1.outputs.address }} ${{ needs.job1.outputs.phone }}"
